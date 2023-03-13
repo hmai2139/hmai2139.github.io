@@ -21,7 +21,7 @@ const pages = [
   { name: "Email", url: "mailto:hoangmai2139@gmail.com" },
 ];
 
-function navbar() {
+function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -154,4 +154,4 @@ function navbar() {
     </AppBar>
   );
 }
-export default navbar;
+export default NavBar;

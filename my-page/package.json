@@ -2,7 +2,10 @@
   "name": "my-page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hmai2139.github.io/",
   "scripts": {
+    "predeploy": "next build",
+    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -24,5 +27,8 @@
     "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
