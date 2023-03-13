@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://hmai2139.github.io/",
   "scripts": {
-    "deploy": "next build && touch .next/.nojekyll && git add .next/ && git commit -m \"Deploy\" && git subtree push --prefix .next origin gh-pages",
+    "deploy": "next build && touch .next/.nojekyll && git add .next/ && git commit -m \"Deploy\" && git subtree push -f --prefix .next origin main",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
