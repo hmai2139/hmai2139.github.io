@@ -1,2 +1,2 @@
 # hmai2139.github.io
-A GitHub Page by me
+Hoang Viet Mai's personal website
