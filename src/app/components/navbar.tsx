@@ -19,6 +19,10 @@ const pages = [
   { name: "GitHub", url: "https://github.com/hmai2139" },
   { name: "LinkedIn", url: "https://www.linkedin.com/in/hoang-mai-634b0321a/" },
   { name: "Email", url: "mailto:hoangmai2139@gmail.com" },
+  {
+    name: "Resume",
+    url: "https://drive.google.com/file/d/1tULKq4yKyiq4doxoeWg264-7ATASjeF3/view",
+  },
 ];
 
 function NavBar() {
@@ -38,117 +42,116 @@ function NavBar() {
     <AppBar position="static" color="inherit" sx={{ borderBottom: 1 }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters>
+          <Typography
+            className={inter.className}
+            variant="h4"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "Inter",
+              fontWeight: 200,
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            Hoang Mai
+          </Typography>
 
+          {/* Nav Bar in mobile mode */}
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
             <Typography
+              variant="h5"
               className={inter.className}
-              variant="h4"
               noWrap
               component="a"
               href="/"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+                display: { xs: "flex", md: "none" },
                 fontFamily: "Inter",
                 fontWeight: 200,
                 color: "inherit",
                 textDecoration: "none",
+                marginTop: "auto",
+                marginBottom: "auto",
+                marginRight: "auto",
               }}
             >
               Hoang Mai
             </Typography>
 
-            {/* Nav Bar in mobile mode */}
-
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: "flex", md: "none" },
-              }}
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
             >
-              <Typography
-                variant="h5"
-                className={inter.className}
-                noWrap
-                component="a"
-                href="/"
-                sx={{
-                  mr: 2,
-                  display: { xs: "flex", md: "none" },
-                  fontFamily: "Inter",
-                  fontWeight: 200,
-                  color: "inherit",
-                  textDecoration: "none",
-                  marginTop: "auto",
-                  marginBottom: "auto",
-                  marginRight: "auto",
-                }}
-              >
-                Hoang Mai
-              </Typography>
-
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "bottom",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem
-                    key={page.name}
-                    onClick={handleCloseNavMenu}
-                    component="a"
-                    target="_blank"
-                    href={page.url}
-                  >
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box>
-            {/* Nav Bar in mobile mode ends */}
-
-            <Box
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                flexGrow: 1,
-                display: { xs: "none", md: "flex" },
-                justifyContent: "flex-end",
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <Button
+                <MenuItem
                   key={page.name}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "black", display: "block" }}
                   component="a"
                   target="_blank"
                   href={page.url}
                 >
-                  {page.name}
-                </Button>
+                  <Typography textAlign="center">{page.name}</Typography>
+                </MenuItem>
               ))}
-            </Box>
+            </Menu>
+          </Box>
+          {/* Nav Bar in mobile mode ends */}
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+            }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page.name}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "black", display: "block" }}
+                component="a"
+                target="_blank"
+                href={page.url}
+              >
+                {page.name}
+              </Button>
+            ))}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
