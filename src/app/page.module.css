@@ -3,7 +3,10 @@
   flex-direction: column;
   justify-content: space-between; */
   align-items: left;
-  padding: 6rem;
+  padding-top: 3rem;
+  padding-left: 14rem;
+  padding-right: 14rem;
+  padding-bottom: 14rem;
   min-height: 100vh;
   background-color: rgb(255, 255, 255);
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Inter, Roboto } from "next/font/google";
+import { Roboto } from "next/font/google";
 import styles from "./page.module.css";
 import NavBar from "./components/navbar";
 import Card from "./components/card";
